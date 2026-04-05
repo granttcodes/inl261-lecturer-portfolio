@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  animation: fadeIn 2s ease-in-out;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007BFF, #00C6FF);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px #00C6FF;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #00C6FF;
+  margin-bottom: 10px;
+}
+
+.quote {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

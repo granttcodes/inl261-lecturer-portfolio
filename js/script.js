@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Set initial animation
   updateAnimation();
 
+  const menuToggle = document.getElementById('menu-toggle');
+  const controlMenu = document.getElementById('control-menu');
+
   buttons.forEach(button => {
     const animation = button.id.replace('-btn', '');
     if (activeAnimations.includes(animation)) {
@@ -30,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateAnimation();
     });
+  });
+
+  menuToggle.addEventListener('click', function() {
+    controlMenu.classList.toggle('open');
   });
 
   function updateAnimation() {

@@ -19,13 +19,46 @@ body {
   padding: 20px;
 }
 
+.avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #00C6FF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: none;
+}
+
+.avatar-container.speaking .ring1 {
+  animation: speakRing 2s ease-out infinite;
+}
+
+.avatar-container.speaking .ring2 {
+  animation: speakRing 2s ease-out infinite 0.5s;
+}
+
+.avatar-container.speaking .ring3 {
+  animation: speakRing 2s ease-out infinite 1s;
+}
+
 .avatar {
+  position: relative;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   background: linear-gradient(135deg, #007BFF, #00C6FF);
-  margin: 0 auto 20px;
   box-shadow: 0 0 20px #00C6FF;
+  /* Animation set via JS */
 }
 
 h1 {
@@ -46,6 +79,29 @@ h1 {
   opacity: 0.8;
 }
 
+.animation-buttons {
+  margin-top: 20px;
+}
+
+.animation-buttons button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.animation-buttons button:hover {
+  background: #0056b3;
+}
+
+.animation-buttons button.active {
+  background: #00C6FF;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -54,5 +110,61 @@ h1 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px #00C6FF;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00C6FF;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px #00C6FF;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes avatarFade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes speakRing {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
   }
 }

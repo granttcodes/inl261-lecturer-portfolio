@@ -148,12 +148,16 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
   animation: fadeIn 2s ease-in-out;
   max-width: 700px;
   padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .avatar-container {
@@ -551,5 +555,270 @@ h1 {
   100% {
     transform: translate(-50%, -50%) scale(2);
     opacity: 0;
+  }
+}
+
+/* ========== PARTICLE ANIMATION SYSTEM ========== */
+
+/**
+ * Particles Container
+ * - Positioned absolutely behind hero content
+ * - Creates the backdrop for floating particles
+ * - Maintains z-index below content
+ */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/**
+ * Individual Particle Styling
+ * - Small circles with cyan glow
+ * - Each particle gets unique animation via nth-child
+ * - Box-shadow creates glow effect for subtle connection appearance
+ * - Filter blur enhances proximity connection effect
+ */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 198, 255, 1), rgba(0, 198, 255, 0.6));
+  border-radius: 50%;
+  opacity: 0.6;
+  pointer-events: none;
+  filter: blur(0.5px);
+  box-shadow: 0 0 8px rgba(0, 198, 255, 0.5), 0 0 16px rgba(0, 198, 255, 0.25);
+}
+
+/**
+ * Particle Distribution and Animation
+ * Each particle is positioned at different starting points and animated
+ * with varied duration, delay, and horizontal offset for natural movement
+ */
+.particle:nth-child(1) {
+  left: 10%;
+  top: 80%;
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+.particle:nth-child(2) {
+  left: 20%;
+  top: 85%;
+  animation: floatUp 10s ease-in-out infinite 0.5s;
+}
+
+.particle:nth-child(3) {
+  left: 15%;
+  top: 75%;
+  animation: floatUp 9s ease-in-out infinite 1s;
+}
+
+.particle:nth-child(4) {
+  left: 35%;
+  top: 90%;
+  animation: floatUp 11s ease-in-out infinite 0.2s;
+}
+
+.particle:nth-child(5) {
+  left: 50%;
+  top: 88%;
+  animation: floatUp 9.5s ease-in-out infinite 0.8s;
+}
+
+.particle:nth-child(6) {
+  left: 65%;
+  top: 92%;
+  animation: floatUp 10.5s ease-in-out infinite 0.3s;
+}
+
+.particle:nth-child(7) {
+  left: 80%;
+  top: 86%;
+  animation: floatUp 8.5s ease-in-out infinite 1.2s;
+}
+
+.particle:nth-child(8) {
+  left: 90%;
+  top: 78%;
+  animation: floatUp 9.8s ease-in-out infinite 0.6s;
+}
+
+.particle:nth-child(9) {
+  left: 25%;
+  top: 70%;
+  animation: floatUp 10.2s ease-in-out infinite 1.5s;
+}
+
+.particle:nth-child(10) {
+  left: 72%;
+  top: 82%;
+  animation: floatUp 8.8s ease-in-out infinite 0.9s;
+}
+
+.particle:nth-child(11) {
+  left: 45%;
+  top: 75%;
+  animation: floatUp 11.5s ease-in-out infinite 0.1s;
+}
+
+.particle:nth-child(12) {
+  left: 60%;
+  top: 70%;
+  animation: floatUp 9.2s ease-in-out infinite 1.3s;
+}
+
+.particle:nth-child(13) {
+  left: 85%;
+  top: 92%;
+  animation: floatUp 10.8s ease-in-out infinite 0.4s;
+}
+
+.particle:nth-child(14) {
+  left: 32%;
+  top: 88%;
+  animation: floatUp 8.3s ease-in-out infinite 1.1s;
+}
+
+.particle:nth-child(15) {
+  left: 75%;
+  top: 75%;
+  animation: floatUp 9.6s ease-in-out infinite 0.7s;
+}
+
+/**
+ * Float Up Animation
+ * - Moves particles upward with slight horizontal drift
+ * - Creates natural, organic floating effect
+ * - Opacity fades in at start and out at end for seamless looping
+ * - Horizontal offset creates variance in movement
+ */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--drift, 0px));
+    opacity: 0;
+  }
+}
+
+/**
+ * Individual particle drift variations
+ * Creates unique horizontal movements for each particle
+ */
+.particle:nth-child(1) {
+  --drift: -8px;
+}
+
+.particle:nth-child(2) {
+  --drift: 12px;
+}
+
+.particle:nth-child(3) {
+  --drift: -5px;
+}
+
+.particle:nth-child(4) {
+  --drift: 15px;
+}
+
+.particle:nth-child(5) {
+  --drift: -12px;
+}
+
+.particle:nth-child(6) {
+  --drift: 8px;
+}
+
+.particle:nth-child(7) {
+  --drift: -10px;
+}
+
+.particle:nth-child(8) {
+  --drift: 10px;
+}
+
+.particle:nth-child(9) {
+  --drift: -6px;
+}
+
+.particle:nth-child(10) {
+  --drift: 14px;
+}
+
+.particle:nth-child(11) {
+  --drift: -14px;
+}
+
+.particle:nth-child(12) {
+  --drift: 6px;
+}
+
+.particle:nth-child(13) {
+  --drift: 11px;
+}
+
+.particle:nth-child(14) {
+  --drift: -9px;
+}
+
+.particle:nth-child(15) {
+  --drift: 7px;
+}
+
+/**
+ * Responsive adjustments
+ * Ensure particles remain visible and not overwhelming on mobile
+ */
+@media (max-width: 768px) {
+  .particle {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 6px rgba(0, 198, 255, 0.4), 0 0 12px rgba(0, 198, 255, 0.2);
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(var(--drift, 0px));
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .particle {
+    width: 2px;
+    height: 2px;
+    opacity: 0.4;
+    box-shadow: 0 0 4px rgba(0, 198, 255, 0.3), 0 0 8px rgba(0, 198, 255, 0.15);
   }
 }

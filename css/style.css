@@ -104,6 +104,17 @@ footer {
   color: rgba(255, 255, 255, 0.84);
 }
 
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .footer-social {
   display: inline-flex;
   gap: 12px;

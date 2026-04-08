@@ -168,10 +168,10 @@ footer {
 }
 .ring {
   position: absolute;
-  top: 58px;
+  top: 50%;
   left: 50%;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border: 2px solid var(--ring-color, #00C6FF);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -204,6 +204,7 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
+  clip-path: circle(50% at center);
 }
 
 /* Adjust avatar-container size for the round photo */

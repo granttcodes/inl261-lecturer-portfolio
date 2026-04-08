@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  const avatar          = document.querySelector('.avatar');
+  const avatar          = document.querySelector('.avatar-photo');
   const avatarContainer = document.querySelector('.avatar-container');
   const buttons         = document.querySelectorAll('.animation-buttons button');
   const hero            = document.querySelector('.hero');

@@ -132,7 +132,16 @@
   <section id="contact" class="page-section fade-section">
     <div class="section-content">
       <h2 class="section-title">Contact</h2>
-      <p class="section-text">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+      <form action="POST" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+        
+      </form>
     </div>
   </section>
 

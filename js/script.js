@@ -95,15 +95,15 @@ document.addEventListener('DOMContentLoaded', function () {
   let activeAnimations = ['pulse'];
 
   /* ── Helpers ───────────────────────────────────────────────────── */
-  for(particles in {length: 15}) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    // p.style.setProperty('--x', `${Math.random() * 200 - 100}vw`);
-    // p.style.setProperty('--y', `${Math.random() * 200 - 100}vh`);
-    // p.style.setProperty('--size', `${Math.random() * 4 + 1}px`);
-    // p.style.setProperty('--delay', `${Math.random() * 5}s`);
-    particles.appendChild(p);
-  }
+  // for(particles in {length: 15}) {
+  //   const p = document.createElement('div');
+  //   p.className = 'particle';
+  //   // p.style.setProperty('--x', `${Math.random() * 200 - 100}vw`);
+  //   // p.style.setProperty('--y', `${Math.random() * 200 - 100}vh`);
+  //   // p.style.setProperty('--size', `${Math.random() * 4 + 1}px`);
+  //   // p.style.setProperty('--delay', `${Math.random() * 5}s`);
+  //   particles.appendChild(p);
+  // }
   /* Blend two hex/rgba colours together (very simple average) */
   function blendRgba(colors) {
     // colours are CSS rgba strings like "rgba(r,g,b,a)"

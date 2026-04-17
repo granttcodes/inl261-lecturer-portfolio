@@ -57,11 +57,12 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
 }
 
 nav a:hover {
   color: #00C6FF;
+  transform: translateY(-2px);
 }
 
 footer {

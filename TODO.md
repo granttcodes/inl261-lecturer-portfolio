@@ -25,9 +25,6 @@ This file tracks tasks for the project.
 - `/\` add keyboard navigation support for the animation control panel
 - `/\` improve section content with more portfolio/project examples
 - `/\` add accessible mobile menu behavior for navigation
-- `/\` add SEO metadata and page description in `index.html`
-- `/\` consolidate CSS comments and remove unused styles if needed
-- `/\` verify external icon and script loading works in production
 
 ## Notes
 

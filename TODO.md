@@ -25,7 +25,6 @@ This file tracks tasks for the project.
 - `\/` consolidate CSS comments and remove unused styles if needed
 - `\/` verify external icon and script loading works in production
 
-
 ## Pending Tasks
 
 - `/\` add accessible mobile menu behavior for navigation

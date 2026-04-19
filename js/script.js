@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Close panel when clicking outside */
   document.addEventListener('click', function (e) {
-    if (!controlMenu.contains(e.target)) {
+    if (!controlMenu.contains(e.target) && e.target !== menuToggle) {
       controlMenu.classList.remove('open');
     }
   });
@@ -233,4 +233,3 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(section);
   });
 });
-

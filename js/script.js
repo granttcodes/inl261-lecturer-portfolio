@@ -8,6 +8,44 @@ document.addEventListener('DOMContentLoaded', function () {
   const hero            = document.querySelector('.hero');
   const particles        = document.querySelector('.particles-container');
 
+  /* ═══════════════════════════════════════════════════════════════
+     NAME REVEAL ANIMATION
+  ═══════════════════════════════════════════════════════════════ */
+  function initializeNameReveal() {
+    const nameSpans = document.querySelectorAll('h1 span');
+    const tagline = document.querySelector('.tagline');
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      // Respect user preference: show everything instantly
+      nameSpans.forEach(span => span.classList.remove('reveal-char'));
+      if (tagline) tagline.classList.add('revealed');
+      return;
+    }
+    
+    // Set initial hidden state
+    nameSpans.forEach(span => span.classList.add('reveal-char'));
+    
+    // Trigger animation with staggered delays
+    requestAnimationFrame(() => {
+      nameSpans.forEach((span, index) => {
+        setTimeout(() => {
+          span.classList.add('animate');
+        }, index * 50); // 0.05s stagger between characters
+      });
+      
+      // Fade in tagline after all characters are revealed
+      const totalDuration = (nameSpans.length - 1) * 50 + 600; // last delay + animation duration
+      setTimeout(() => {
+        if (tagline) tagline.classList.add('revealed');
+      }, totalDuration);
+    });
+  }
+  
+  initializeNameReveal();
+
    /* ═══════════════════════════════════════════════════════════════
      HAMBURGER / MOBILE NAV
   ═══════════════════════════════════════════════════════════════ */

@@ -8,6 +8,33 @@ document.addEventListener('DOMContentLoaded', function () {
   const hero            = document.querySelector('.hero');
   const particles        = document.querySelector('.particles-container');
 
+   function openNav() {
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    mobileNavOverlay.classList.add('open');
+    mobileNavOverlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('nav-open');
+  }
+
+  function closeNav() {
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    mobileNavOverlay.classList.remove('open');
+    mobileNavOverlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('nav-open');
+  }
+
+  hamburgerBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    hamburgerBtn.getAttribute('aria-expanded') === 'true' ? closeNav() : openNav();
+  });
+
+  mobileNavLinks.forEach(link => link.addEventListener('click', closeNav));
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+  mobileNavOverlay.addEventListener('click', function (e) {
+    if (e.target === mobileNavOverlay) closeNav();
+  });
+
   /* ═══════════════════════════════════════════════════════════════
      NAME REVEAL ANIMATION
   ═══════════════════════════════════════════════════════════════ */
@@ -44,53 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   
-  initializeNameReveal();
 
-   /* ═══════════════════════════════════════════════════════════════
-     HAMBURGER / MOBILE NAV
-  ═══════════════════════════════════════════════════════════════ */
-  const hamburgerBtn    = document.getElementById('hamburger-btn');
-  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-  const mobileNavLinks  = document.querySelectorAll('.mobile-nav-link');
-
-  function openMobileNav() {
-    hamburgerBtn.setAttribute('aria-expanded', 'true');
-    mobileNavOverlay.classList.add('open');
-    mobileNavOverlay.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('nav-open');
-  }
-
-  function closeMobileNav() {
-    hamburgerBtn.setAttribute('aria-expanded', 'false');
-    mobileNavOverlay.classList.remove('open');
-    mobileNavOverlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('nav-open');
-  }
-
-  function toggleMobileNav() {
-    const isOpen = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-    isOpen ? closeMobileNav() : openMobileNav();
-  }
-
-  hamburgerBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    toggleMobileNav();
-  });
-
-  // Close when a nav link is tapped
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', closeMobileNav);
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMobileNav();
-  });
-
-  // Close when tapping the overlay backdrop (outside the nav list)
-  mobileNavOverlay.addEventListener('click', function (e) {
-    if (e.target === mobileNavOverlay) closeMobileNav();
-  });
 
 
   /* ── Animation catalogue ───────────────────────────────────────────

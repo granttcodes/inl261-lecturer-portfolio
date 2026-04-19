@@ -24,7 +24,6 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: nowrap;
 }
 
 header h1 {
@@ -33,7 +32,6 @@ header h1 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #00C6FF;
-  white-space: nowrap;
 }
 
 nav ul {
@@ -48,12 +46,11 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: all 0.2s ease;
+  transition: color 0.2s;
 }
 
 nav a:hover {
   color: #00C6FF;
-  transform: translateY(-2px);
 }
 
 /* ── Hamburger ────────────────────────────────────────────── */

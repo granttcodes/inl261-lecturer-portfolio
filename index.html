@@ -14,37 +14,7 @@
   <header>
     <div class="header-inner">
       <h1>Ikraam Sadek</h1>
-      <nav>
-        <<button 
-  class="nav-toggle" 
-  id="nav-toggle" 
-  aria-label="Toggle navigation menu" 
-  aria-expanded="false" 
-  aria-controls="nav-list"
->>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-<!-- Hamburger button (mobile only) -->
-      <button
-        class="hamburger"
-        id="hamburger-btn"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="main-nav"
-      >
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile nav overlay (separate from header for full-screen effect) -->
-  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-      <ul>
+     
         <ul id="nav-list">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
@@ -53,10 +23,32 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburger-btn"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-nav-overlay">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
+   <!-- Mobile full-screen nav overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="#home"     class="mobile-nav-link">Home</a></li>
+        <li><a href="#about"    class="mobile-nav-link">About Me</a></li>
+        <li><a href="#quotes"   class="mobile-nav-link">Quotes</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact"  class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <section id="home" class="hero">
+   <section id="home" class="hero">
     <!-- Particle background animation -->
     <div class="particles-container">
       <div class="particle"></div>

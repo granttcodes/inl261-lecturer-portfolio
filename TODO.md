@@ -17,13 +17,14 @@ This file tracks tasks for the project.
 - `\/` added a contact form UI
 - `\/` added scroll fade-in animations for page sections
 - `\/` added footer social links and animation panel
-
 - `\/` make the layout responsive for mobile and smaller screens
-
 - `\/` improve section content with more portfolio/project examples
-
 - `\/` consolidate CSS comments and remove unused styles if needed
+<<<<<<< HEAD
 - `\/` verify external icon and script loading works in production
+=======
+- `\/` Verify external icon and script loading works in production 
+>>>>>>> 3f8de7e042dc9c15c7dccdaab085024902c65cef
 
 ## Pending Tasks
 

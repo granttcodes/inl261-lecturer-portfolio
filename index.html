@@ -4,18 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ikraam Sadek Portfolio</title>
-
   <link rel="stylesheet" href="./css/style.css">
   <script type="module" src="https://unpkg.com/ionicons@7.1.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.2/dist/ionicons/ionicons.js"></script>
 </head>
-
 <body>
+
   <header>
     <div class="header-inner">
       <h1>Ikraam Sadek</h1>
-     
-        <ul id="nav-list">
+      <nav id="main-nav">
+        <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#quotes">Quotes</a></li>
@@ -23,8 +22,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      
-      <!-- Hamburger (mobile only) -->
       <button class="hamburger" id="hamburger-btn"
               aria-label="Toggle navigation menu"
               aria-expanded="false"
@@ -35,7 +32,7 @@
       </button>
     </div>
   </header>
-   <!-- Mobile full-screen nav overlay -->
+
   <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <ul>
@@ -48,118 +45,82 @@
     </nav>
   </div>
 
-   <section id="home" class="hero">
-    <!-- Particle background animation -->
+  <section id="home" class="hero">
     <div class="particles-container">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
+      <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+      <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+      <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+      <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+      <div class="particle"></div><div class="particle"></div><div class="particle"></div>
     </div>
-
     <div class="hero-content">
       <div class="avatar-container">
-        <!-- New photo avatar -->
-        <img src="./res/project_animated_lec.jpg"
-          alt="Ikraam Sadek"
-          class="avatar-photo">
-
-        <!-- Speaking rings (kept for animation effects) -->
+        <img src="./res/project_animated_lec.jpg" alt="Ikraam Sadek" class="avatar-photo">
         <div class="ring ring1"></div>
         <div class="ring ring2"></div>
         <div class="ring ring3"></div>
-
-        <!-- Orbit ring (added by JS) -->
       </div>
-
-      <h1><span>I</span><span>k</span><span>r</span><span>a</span><span>a</span><span>m</span><span> </span><span>S</span><span>a</span><span>d</span><span>e</span><span>k</span></h1>
+      <h1>Ikraam Sadek</h1>
       <p class="tagline">"Enjoy helping people with any issues they come across."</p>
-      <p class="quote">
-        "When you create a project, upload it onto Github so that by the time you apply for a job you have built up a nice portfolio for yourself."
-      </p>
+      <p class="quote">"When you create a project, upload it onto Github so that by the time you apply for a job you have built up a nice portfolio for yourself."</p>
     </div>
   </section>
 
   <section id="about" class="page-section fade-section">
     <div class="section-content">
       <h2 class="section-title">About Me</h2>
-      <p class="section-text">I’m Ikraam Sadek, a lecturer in programming and software-related subjects across first and second year levels. I hold an Advanced Diploma in Application Development and take a practical, student-focused approach to teaching.
-      I focus on engaging students through discussion, keeping them on track, and making sure no one falls behind. I’m also known for being approachable and always willing to help, especially when it comes to technical challenges.</p>
+      <p class="section-text">I'm Ikraam Sadek, a lecturer in programming and software-related subjects across first and second year levels. I hold an Advanced Diploma in Application Development and take a practical, student-focused approach to teaching.
+      I focus on engaging students through discussion, keeping them on track, and making sure no one falls behind. I'm also known for being approachable and always willing to help, especially when it comes to technical challenges.</p>
     </div>
   </section>
-
 
   <section id="projects" class="page-section section-alt fade-section">
     <div class="section-content">
       <h2 class="section-title">Projects</h2>
       <p class="section-text">
-        <u>Teaching & Module Development</u> <br>
+        <u>Teaching &amp; Module Development</u> <br>
         I have been involved in teaching a wide range of programming and IT-related modules across both first and second year levels, helping students build strong foundational and practical skills.
-        <br> <br>
-        <u>Student Support & Engagement</u> <br>
+        <br><br>
+        <u>Student Support &amp; Engagement</u> <br>
         I actively support students through discussions, check-ins, and hands-on guidance to ensure consistent progress and understanding.
-        <br> <br>
-        <u>Moodle & Technical Support</u> <br>
+        <br><br>
+        <u>Moodle &amp; Technical Support</u> <br>
         I am widely recognised for assisting both students and colleagues with Moodle-related challenges, often serving as a go-to person for technical support on campus.
       </p>
     </div>
   </section>
 
-    <section id="quotes" class="page-section section-alt fade-section">
+  <section id="quotes" class="page-section section-alt fade-section">
     <div class="section-content">
       <h2 class="section-title">Quote Wall</h2>
       <div class="quote-wall">
         <div class="quote-card">
-          <blockquote class="quote-text">
-            "When you create a project, upload it onto Github so that by the time you apply for a job you have built up a nice portfolio for yourself."
-          </blockquote>
+          <blockquote class="quote-text">"When you create a project, upload it onto Github so that by the time you apply for a job you have built up a nice portfolio for yourself."</blockquote>
           <cite class="quote-author">— Ikraam Sadek</cite>
         </div>
         <div class="quote-card">
-          <blockquote class="quote-text">
-            "The best way to learn is by doing. Don't just read about programming, write code every day."
-          </blockquote>
+          <blockquote class="quote-text">"The best way to learn is by doing. Don't just read about programming, write code every day."</blockquote>
           <cite class="quote-author">— Ikraam Sadek</cite>
         </div>
         <div class="quote-card">
-          <blockquote class="quote-text">
-            "Debugging is twice as hard as writing code in the first place. Therefore, if you write code as cleverly as possible, you are, by definition, not smart enough to debug it."
-          </blockquote>
+          <blockquote class="quote-text">"Debugging is twice as hard as writing code in the first place. Therefore, if you write code as cleverly as possible, you are, by definition, not smart enough to debug it."</blockquote>
           <cite class="quote-author">— Brian Kernighan</cite>
         </div>
         <div class="quote-card">
-          <blockquote class="quote-text">
-            "Code is poetry written in logic."
-          </blockquote>
+          <blockquote class="quote-text">"Code is poetry written in logic."</blockquote>
           <cite class="quote-author">— Ikraam Sadek</cite>
         </div>
         <div class="quote-card">
-          <blockquote class="quote-text">
-            "The only way to do great work is to love what you do."
-          </blockquote>
+          <blockquote class="quote-text">"The only way to do great work is to love what you do."</blockquote>
           <cite class="quote-author">— Steve Jobs</cite>
         </div>
         <div class="quote-card">
-          <blockquote class="quote-text">
-            "Programming isn't about what you know; it's about what you can figure out."
-          </blockquote>
+          <blockquote class="quote-text">"Programming isn't about what you know; it's about what you can figure out."</blockquote>
           <cite class="quote-author">— Chris Pine</cite>
         </div>
       </div>
     </div>
   </section>
-
 
   <section id="contact" class="page-section fade-section">
     <div class="section-content">
@@ -172,7 +133,6 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
-        
       </form>
     </div>
   </section>
@@ -180,7 +140,7 @@
   <footer>
     <div class="footer-inner">
       <div>
-        <p class="footer-copy">© 2026 Ikraam Sadek. Portfolio design with HTML, CSS & JavaScript.</p>
+        <p class="footer-copy">© 2026 Ikraam Sadek. Portfolio design with HTML, CSS &amp; JavaScript.</p>
         <div class="footer-social">
           <a class="social-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
             <ion-icon name="logo-github"></ion-icon>

@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  const navToggle = document.getElementById('nav-toggle');
+  const navList = document.getElementById('nav-list');
   const avatar          = document.querySelector('.avatar-photo');
   const avatarContainer = document.querySelector('.avatar-container');
   const buttons         = document.querySelectorAll('.animation-buttons button');
@@ -212,6 +214,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ── Initial render ─────────────────────────────────────────────── */
   updateAll();
+
+  if (navToggle && navList) {
+    navToggle.addEventListener('click', function () {
+      navList.classList.toggle('show');
+
+      const isOpen = navList.classList.contains('show');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function () {
+        navList.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  } 
 
   /* ── Scroll fade-in for sections ────────────────────────────────── */
   const fadeSections = document.querySelectorAll('.fade-section');

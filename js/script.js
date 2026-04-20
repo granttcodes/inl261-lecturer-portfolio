@@ -1,37 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  const navToggle = document.getElementById('nav-toggle');
   const navList = document.getElementById('nav-list');
+  const navEl = navList.closest('nav');
   const avatar          = document.querySelector('.avatar-photo');
   const avatarContainer = document.querySelector('.avatar-container');
   const buttons         = document.querySelectorAll('.animation-buttons button');
   const hero            = document.querySelector('.hero');
   const particles        = document.querySelector('.particles-container');
 
-   /* ═══════════════════════════════════════════════════════════════
+  /* ═══════════════════════════════════════════════════════════════
      HAMBURGER / MOBILE NAV
   ═══════════════════════════════════════════════════════════════ */
-  const hamburgerBtn    = document.getElementById('hamburger-btn');
-  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-  const mobileNavLinks  = document.querySelectorAll('.mobile-nav-link');
+  const hamburgerBtn = document.getElementById('hamburger-btn');
 
-  function openMobileNav() {
-    hamburgerBtn.setAttribute('aria-expanded', 'true');
-    mobileNavOverlay.classList.add('open');
-    mobileNavOverlay.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('nav-open');
+  function toggleMobileNav() {
+    const isOpen = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+    const newState = !isOpen;
+    
+    hamburgerBtn.setAttribute('aria-expanded', newState);
+    navEl.classList.toggle('mobile-open', newState);
+    document.body.classList.toggle('nav-open', newState);
   }
 
   function closeMobileNav() {
     hamburgerBtn.setAttribute('aria-expanded', 'false');
-    mobileNavOverlay.classList.remove('open');
-    mobileNavOverlay.setAttribute('aria-hidden', 'true');
+    navEl.classList.remove('mobile-open');
     document.body.classList.remove('nav-open');
-  }
-
-  function toggleMobileNav() {
-    const isOpen = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-    isOpen ? closeMobileNav() : openMobileNav();
   }
 
   hamburgerBtn.addEventListener('click', function (e) {
@@ -40,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Close when a nav link is tapped
-  mobileNavLinks.forEach(link => {
+  navList.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileNav);
   });
 
@@ -49,11 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeMobileNav();
   });
 
-  // Close when tapping the overlay backdrop (outside the nav list)
-  mobileNavOverlay.addEventListener('click', function (e) {
-    if (e.target === mobileNavOverlay) closeMobileNav();
+  // Close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!navList.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+      closeMobileNav();
+    }
   });
-
 
   /* ── Animation catalogue ───────────────────────────────────────────
      Each entry defines:
@@ -262,21 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Initial render ─────────────────────────────────────────────── */
   updateAll();
 
-  if (navToggle && navList) {
-    navToggle.addEventListener('click', function () {
-      navList.classList.toggle('show');
-
-      const isOpen = navList.classList.contains('show');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    navList.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function () {
-        navList.classList.remove('show');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  } 
+  // Redundant navToggle logic removed
 
   /* ── Scroll fade-in for sections ────────────────────────────────── */
   const fadeSections = document.querySelectorAll('.fade-section');
